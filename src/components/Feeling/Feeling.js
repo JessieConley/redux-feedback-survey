@@ -5,7 +5,7 @@ import React, { Component } from "react";
 
 
 class Feeling extends Component {
-
+//Set up buttonClick function to takes user to the next route they want to go using this.props.history
     buttonClick = () =>{
         this.props.history.push('/understanding')
     }
@@ -31,7 +31,5 @@ class Feeling extends Component {
     }
 }
 
-// const putReduxStateOnProps = (reduxState) => ({
-//     reduxState
-// })
+
 export default Feeling;
