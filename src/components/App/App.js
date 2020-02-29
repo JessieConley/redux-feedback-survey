@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route } from "react-router-dom";
+import { connect } from "react-redux";
 
 //import components
 import Feeling from '../Feeling/Feeling';
@@ -13,6 +14,30 @@ import ThankYou from "../ThankYou/ThankYou";
 
 class App extends Component {
 
+
+  // supportedClick = () => {
+  //   this.props.dispatch({
+  //     type: "SUPPORTED_CLICK"
+  //   });
+  // };
+
+  // understandingClick = () => {
+  //   this.props.dispatch({
+  //     type: "UNDERSTANDING_CLICK"
+  //   });
+  // };
+
+  // commentsClick = () => {
+  //   this.props.dispatch({
+  //     type: "COMMENTS_CLICK"
+  //   });
+  // };
+
+  // reviewClick = () => {
+  //   this.props.dispatch({
+  //     type: "REVIEW_CLICK"
+  //   });
+  // };
 
   render() {
     return (
@@ -41,5 +66,11 @@ class App extends Component {
   }
 }
 
+const putReduxStateOnProps = reduxState => ({
+  reduxState,
+  
+});
 
-export default App;
+export default connect(putReduxStateOnProps)(App);
+
+
