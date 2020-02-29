@@ -31,7 +31,7 @@ class Feeling extends Component {
 
   render() {
     return (
-      <div className="QuestionOne">
+      <div className="FeelingQuestion">
         <h1>How are you feeling today?</h1>
         <p>Feeling?</p>
        

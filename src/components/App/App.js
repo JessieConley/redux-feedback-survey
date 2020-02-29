@@ -14,31 +14,6 @@ import ThankYou from "../ThankYou/ThankYou";
 
 class App extends Component {
 
-
-  // supportedClick = () => {
-  //   this.props.dispatch({
-  //     type: "SUPPORTED_CLICK"
-  //   });
-  // };
-
-  // understandingClick = () => {
-  //   this.props.dispatch({
-  //     type: "UNDERSTANDING_CLICK"
-  //   });
-  // };
-
-  // commentsClick = () => {
-  //   this.props.dispatch({
-  //     type: "COMMENTS_CLICK"
-  //   });
-  // };
-
-  // reviewClick = () => {
-  //   this.props.dispatch({
-  //     type: "REVIEW_CLICK"
-  //   });
-  // };
-
   render() {
     return (
       //Wrap divs and route path in a router
