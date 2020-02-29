@@ -11,6 +11,7 @@ class Comments extends Component {
       <div className="QuestionFour">
         <h1>Any comments you want to leave?</h1>
         <p>Comments</p>
+        
         <input placeholder="comments"></input>
 
         <button onClick={this.buttonClick}>Next</button>
