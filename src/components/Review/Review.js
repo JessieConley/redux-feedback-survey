@@ -2,7 +2,9 @@ import React, { Component } from "react";
 // import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class Review extends Component {
- 
+  buttonClick = () => {
+    this.props.history.push("/thank-you");
+  };
   render() {
     return (
       <div className="Review">
@@ -11,7 +13,7 @@ class Review extends Component {
         <p>Understanding:</p>
         <p>Support:</p>
         <p>Comments:</p>
-        <button>Submit</button>
+        <button onClick={this.buttonClick}>Submit</button>
       </div>
     );
   }
