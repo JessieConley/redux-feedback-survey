@@ -7,19 +7,43 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
+ // TODO - set feedback with data from server
 
-const feedback = (state = [], action) => {
-  // TODO - set feedback with data from server
-if(action.type === 'ANSWER'){
+const feelingReducer = (state = [], action) => {
+if(action.type === 'FEEL_ANSWER'){
     return [...state,action.payload]
 }
 return state
 }
 
+const understandingReducer = (state = [], action) => {
+  if (action.type === "UNDERSTAND_ANSWER") {
+    return [...state, action.payload];
+  }
+  return state;
+};
+
+const supportedReducer = (state = [], action) => {
+  if (action.type === "SUPPORTED_ANSWER") {
+    return [...state, action.payload];
+  }
+  return state;
+};
+
+const commentsReducer = (state = [], action) => {
+  if (action.type === "COMMENTS_ANSWER") {
+    return [...state, action.payload];
+  }
+  return state;
+};
+
  
 const reduxStore = createStore(
   combineReducers({
-    feedback
+    feelingReducer,
+    understandingReducer,
+    supportedReducer,
+    commentsReducer
   }),
   applyMiddleware(logger)
 );

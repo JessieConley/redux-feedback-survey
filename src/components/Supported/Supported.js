@@ -18,10 +18,10 @@ class Supported extends Component {
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
     this.props.dispatch({
-      type: "ANSWER",
+      type: "SUPPORTED_ANSWER",
       payload: this.state.supported
     });
-    console.log("logging payload from ANSWER", this.state);
+    console.log("logging payload from SUPPORTED_ANSWER", this.state);
 
     this.props.history.push("/comments");
   };

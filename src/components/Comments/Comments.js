@@ -18,10 +18,10 @@ class Comments extends Component {
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
     this.props.dispatch({
-      type: "ANSWER",
+      type: "COMMENTS_ANSWER",
       payload: this.state.comments
     });
-    console.log("logging payload from ANSWER", this.state);
+    console.log("logging payload from COMMENTS_ANSWER", this.state);
 
     this.props.history.push("/review");
   };
@@ -30,11 +30,10 @@ class Comments extends Component {
     return (
       <div className="commentsInput">
         <h1>Any comments you want to leave?</h1>
-        <p>Comments</p>
-
-        <input placeholder="comments"></input>
-
-        <button onClick={this.buttonClick}>Next</button>
+        <textarea rows="10" cols="75" onChange={this.handleChange} />
+        <div>
+          <button onClick={this.buttonClick}>Next</button>
+        </div>
       </div>
     );
   }

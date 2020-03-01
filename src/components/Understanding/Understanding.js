@@ -20,10 +20,10 @@ class Understanding extends Component {
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
     this.props.dispatch({
-      type: "ANSWER",
+      type: "UNDERSTAND_ANSWER",
       payload: this.state.understanding
     });
-    console.log("logging payload from ANSWER", this.state);
+    console.log("logging payload from UNDERSTAND_ANSWER", this.state);
 
     this.props.history.push("/supported");
   };
