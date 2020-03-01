@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import Button from "@material-ui/core/Button";
 
 class Feeling extends Component {
   //Set initial state
@@ -43,7 +43,8 @@ class Feeling extends Component {
             <option value="5">5 (I'm feeling great!)</option>
           </select>
           <br></br>
-          <button onClick={this.buttonClick}>Next</button>
+          <br></br>
+          <Button size="small" variant="contained" color="primary" onClick={this.buttonClick}>Next</Button>
         
       </div>
     );

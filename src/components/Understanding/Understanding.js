@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import Axios from 'axios';
+import Button from "@material-ui/core/Button";
 
-// import { HashRouter as Router, Route, Link } from "react-router-dom";
 
 class Understanding extends Component {
   //Set initial state
@@ -53,7 +52,8 @@ class Understanding extends Component {
           <option value="5">5 (I've got this!)</option>
         </select>
         <br></br>
-        <button onClick={this.buttonClick}>Next</button>
+        <br></br>
+        <Button size="small" variant="contained" color="primary" onClick={this.buttonClick}>Next</Button>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
+import Button from "@material-ui/core/Button";
 
 class Review extends Component {
 //Axios post reducer data to database and advance to next page on button click
@@ -39,7 +40,8 @@ class Review extends Component {
         <p>Understanding: {this.props.reduxState.understandingReducer}</p>
         <p>Support: {this.props.reduxState.supportedReducer}</p>
         <p>Comments: {this.props.reduxState.commentsReducer}</p>
-        <button onClick={this.postFeedback}>Submit</button>
+        <Button size="large" variant="contained" color="primary" onClick={this.postFeedback}>Submit</Button>
+       
       </div>
     );
   }

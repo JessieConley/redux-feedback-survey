@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
+
 class Comments extends Component {
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
@@ -10,7 +12,7 @@ class Comments extends Component {
         <h1>Thank You!</h1>
         <h2>Your feedback has been received.</h2>
        
-        <button onClick={this.buttonClick}>Leave New Feedback</button>
+        <Button size="large" variant="contained" color="primary" onClick={this.buttonClick}>Leave New Feedback</Button>
       </div>
     );
   }
