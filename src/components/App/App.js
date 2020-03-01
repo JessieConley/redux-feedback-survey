@@ -16,7 +16,7 @@ class App extends Component {
 
   render() {
     return (
-      //Wrap divs and route path in a router
+      //Wrap divs and route path in a router and set up routes to each router page
       <Router>
         <div className="App">
           <header className="App-header">
@@ -25,15 +25,12 @@ class App extends Component {
               <i>Don't forget it!</i>
             </h4>
           </header>
-
-          {/* Set up routes to each component page: */}
           <Route exact path="/" component={Feeling} />
           <Route exact path="/understanding" component={Understanding} />
           <Route exact path="/supported" component={Supported} />
           <Route exact path="/comments" component={Comments} />
           <Route exact path="/review" component={Review} />
           <Route exact path="/thank-you" component={ThankYou} />
-          {/* //end route paths */}
         </div>
       </Router>
       //end route wrapper
@@ -41,6 +38,7 @@ class App extends Component {
   }
 }
 
+//Read data from reducer
 const putReduxStateOnProps = reduxState => ({
   reduxState,
   

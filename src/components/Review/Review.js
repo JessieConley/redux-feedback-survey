@@ -31,7 +31,7 @@ class Review extends Component {
       });
   }
   
-
+//Pass props to display scores and comments in review
   render() {
     return (
       <div className="Review">
@@ -47,6 +47,7 @@ class Review extends Component {
   }
 }
 
+//Read data from reducer
 const putReduxStateOnProps = reduxState => ({
   reduxState
 });
