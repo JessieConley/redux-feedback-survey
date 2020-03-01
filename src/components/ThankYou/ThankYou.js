@@ -8,6 +8,7 @@ class Comments extends Component {
     return (
       <div className="QuestionFour">
         <h1>Thank You!</h1>
+        <h2>Your feedback has been received.</h2>
        
         <button onClick={this.buttonClick}>Leave New Feedback</button>
       </div>

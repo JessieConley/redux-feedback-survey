@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 class Understanding extends Component {
   state = {
-    understanding: ''
+    understanding: '0'
   };
 
   //Dispatch to 
@@ -19,6 +19,8 @@ class Understanding extends Component {
 
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
+     if(this.state.understanding==='0')
+    {alert('A selection is required to advance to the next question.'); return};
     this.props.dispatch({
       type: "UNDERSTAND_ANSWER",
       payload: this.state.understanding
@@ -35,12 +37,12 @@ class Understanding extends Component {
         <p>Understanding?</p>
 
         <select id="understanding" name="understanding" onChange={this.handleChangeFor}>
-             <option value="0">0</option>
-          <option value="1">1 (really bad)</option>
+          <option value="0">Choose</option>
+          <option value="1">1 (I'm totally lost.)</option>
           <option value="2">2</option>
           <option value="3">3</option>
           <option value="4">4</option>
-          <option value="5">5 (great)</option>
+          <option value="5">5 (I've got this!)</option>
         </select>
         <button onClick={this.buttonClick}>Next</button>
       </div>

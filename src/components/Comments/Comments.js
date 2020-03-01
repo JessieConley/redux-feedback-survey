@@ -8,7 +8,7 @@ class Comments extends Component {
   };
 
   //Dispatch to
-  handleChangeFor = (event, typeOfChange) => {
+  handleChangeFor = (event) => {
     // console.log("logging from handleChangeFor", event.target.value);
     this.setState({
       comments: event.target.value
@@ -28,8 +28,8 @@ class Comments extends Component {
   render() {
     return (
       <div className="commentsInput">
-        <h1>Any comments you want to leave?</h1>
-        <textarea rows="10" cols="75" onChange={this.handleChange} />
+        <h1>Is there anything else you would like us to know?</h1>
+        <textarea label="(Optional)" rows="10" cols="75" onChange={this.handleChangeFor} />
         <div>
           <button onClick={this.buttonClick}>Next</button>
         </div>

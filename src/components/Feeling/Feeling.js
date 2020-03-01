@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class Feeling extends Component {
   state = {
-    feeling:''
+    feeling: '0'
   };
 
   handleChangeFor = (event, typeOfChange) => {
@@ -20,6 +20,8 @@ class Feeling extends Component {
 
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
+    if(this.state.feeling==='0')
+    {alert('A selection is required to advance to the next question.'); return};
     this.props.dispatch({
       type: "FEEL_ANSWER",
       payload: this.state.feeling
@@ -34,13 +36,13 @@ class Feeling extends Component {
       <div className="FeelingQuestion">
         <h1>How are you feeling today?</h1>
         <p>Feeling?</p>
-          <select id="feeling" name="feeling" onChange={this.handleChangeFor}>
-            <option value="0">0</option>
-            <option value="1">1 (really bad)</option>
+          <select required aria-required="true" id="feeling" name="feeling" onChange={this.handleChangeFor}>
+            <option value="0">Choose</option>
+            <option value="1">1 (I'm very stressed.)</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
-            <option value="5">5 (great)</option>
+            <option value="5">5 (I'm feeling great!)</option>
           </select>
           <button onClick={this.buttonClick}>Next</button>
         
