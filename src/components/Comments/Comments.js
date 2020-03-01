@@ -9,7 +9,7 @@ class Comments extends Component {
 
   //Dispatch to
   handleChangeFor = (event, typeOfChange) => {
-    console.log("logging from handleChangeFor", event.target.value);
+    // console.log("logging from handleChangeFor", event.target.value);
     this.setState({
       comments: event.target.value
     });
@@ -21,9 +21,8 @@ class Comments extends Component {
       type: "COMMENTS_ANSWER",
       payload: this.state.comments
     });
-    console.log("logging payload from COMMENTS_ANSWER", this.state);
-
-    this.props.history.push("/review");
+    // console.log("logging payload from COMMENTS_ANSWER", this.state);
+    this.props.history.push('/review');
   };
 
   render() {
@@ -39,4 +38,7 @@ class Comments extends Component {
   }
 }
 
-export default connect() (Comments);
+const putReduxStateOnProps = reduxState => ({
+  reduxState
+});
+export default connect(putReduxStateOnProps)(Comments);

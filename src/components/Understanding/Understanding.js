@@ -35,6 +35,7 @@ class Understanding extends Component {
         <p>Understanding?</p>
 
         <select id="understanding" name="understanding" onChange={this.handleChangeFor}>
+             <option value="0">0</option>
           <option value="1">1 (really bad)</option>
           <option value="2">2</option>
           <option value="3">3</option>

@@ -3,29 +3,34 @@ import axios from "axios";
 import { connect } from "react-redux";
 
 class Review extends Component {
-
-  postFeedback = (input) => {
+//Axios post reducer data to database and advance to next page on button click
+  postFeedback = () => {
+    let feedbackToSend = {
+      feeling:this.props.reduxState.feelingReducer,
+      understanding: this.props.reduxState.understandingReducer,
+      support:this.props.reduxState.supportedReducer,
+      comments: this.props.reduxState.commentsReducer
+    }
     axios({
       method: 'POST',
       url: '/feedback',
-      data: input
-    }).then(response => {
-      console.log(response.data);
-    }).catch(error =>{
-      console.log (error);
-      alert('error with POST');
-    });
-    this.props.history.push("/");
-    // this.props.dispatch({
-    //   type: "RESET_TOTAL"
-    // });
+      data: feedbackToSend
+    })
+      .then(response => {
+        console.log(response);
+        this.props.dispatch({
+          type: 'NEW_FEEDBACK',
+        })
+        this.props.history.push("/thank-you");
+      
+      })
+      .catch(error => {
+        console.log("error in POST", error);
+        alert("error sending feedback data");
+      });
   }
   
-  buttonClick = () => {
 
-
-    this.props.history.push("/thank-you");
-  };
   render() {
     return (
       <div className="Review">
@@ -34,7 +39,7 @@ class Review extends Component {
         <p>Understanding: {this.props.reduxState.understandingReducer}</p>
         <p>Support: {this.props.reduxState.supportedReducer}</p>
         <p>Comments: {this.props.reduxState.commentsReducer}</p>
-        <button onClick={this.buttonClick}>Submit</button>
+        <button onClick={this.postFeedback}>Submit</button>
       </div>
     );
   }

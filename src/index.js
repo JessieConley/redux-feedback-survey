@@ -7,9 +7,9 @@ import { createStore, combineReducers, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import logger from "redux-logger";
 
- // TODO - set feedback with data from server with reducers for each component
+ // TODO - set feedback with data from server with reducers for each component to capture input
 
-const feelingReducer = (state = [], action) => {
+const feelingReducer = (state = '', action) => {
 if(action.type === 'FEEL_ANSWER'){
     return state = action.payload;
 }

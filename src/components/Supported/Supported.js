@@ -33,6 +33,7 @@ class Supported extends Component {
         <p>Support?</p>
 
         <select id="supported" name="supported" onChange={this.handleChangeFor}>
+          <option value="0">0</option>
           <option value="1">1 (really bad)</option>
           <option value="2">2</option>
           <option value="3">3</option>

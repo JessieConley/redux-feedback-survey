@@ -34,8 +34,8 @@ class Feeling extends Component {
       <div className="FeelingQuestion">
         <h1>How are you feeling today?</h1>
         <p>Feeling?</p>
-       
           <select id="feeling" name="feeling" onChange={this.handleChangeFor}>
+            <option value="0">0</option>
             <option value="1">1 (really bad)</option>
             <option value="2">2</option>
             <option value="3">3</option>
