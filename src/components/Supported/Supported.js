@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 class Supported extends Component {
   state = {
-    supported: ""
+    supported: ''
   };
 
   //Dispatch to

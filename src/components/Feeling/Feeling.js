@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class Feeling extends Component {
   state = {
-    feeling: ""
+    feeling:''
   };
 
   handleChangeFor = (event, typeOfChange) => {

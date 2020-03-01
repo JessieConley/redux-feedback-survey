@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 
 class Understanding extends Component {
   state = {
-    understanding: ""
+    understanding: ''
   };
 
   //Dispatch to 
