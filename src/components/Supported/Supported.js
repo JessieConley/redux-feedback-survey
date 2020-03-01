@@ -3,11 +3,12 @@ import { connect } from "react-redux";
 
 
 class Supported extends Component {
+  //Set initial state
   state = {
-    supported: '0'
+    supported: "0"
   };
 
-  //Dispatch to
+  //Update state to selected value
   handleChangeFor = (event, typeOfChange) => {
     console.log("logging from handleChangeFor", event.target.value);
     this.setState({
@@ -17,8 +18,11 @@ class Supported extends Component {
 
   //Set up buttonClick function to takes user to the next route they want to go using this.props.history
   buttonClick = () => {
-    if(this.state.supported==='0')
-    {alert('A selection is required to advance to the next question.'); return};
+    if (this.state.supported === "0") {
+      alert("A selection is required to advance to the next question.");
+      return;
+    }
+    //Dispatch to reducer
     this.props.dispatch({
       type: "SUPPORTED_ANSWER",
       payload: this.state.supported
@@ -42,6 +46,7 @@ class Supported extends Component {
           <option value="4">4</option>
           <option value="5">5 (I feel supported!)</option>
         </select>
+        <br></br>
         <button onClick={this.buttonClick}>Next</button>
       </div>
     );

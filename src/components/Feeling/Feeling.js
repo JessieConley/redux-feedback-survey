@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import Axios from 'axios';
-
-// import { HashRouter as Router, Route, Link } from "react-router-dom";
-
 
 
 class Feeling extends Component {
+  //Set initial state
   state = {
     feeling: '0'
   };
-
+//Update state to selected value
   handleChangeFor = (event, typeOfChange) => {
     console.log("logging from handleChangeFor", event.target.value);
     this.setState({
@@ -23,6 +20,7 @@ class Feeling extends Component {
     if(this.state.feeling==='0')
     {alert('A selection is required to advance to the next question.'); return};
     this.props.dispatch({
+  //Dispatch to reducer
       type: "FEEL_ANSWER",
       payload: this.state.feeling
     });
@@ -44,6 +42,7 @@ class Feeling extends Component {
             <option value="4">4</option>
             <option value="5">5 (I'm feeling great!)</option>
           </select>
+          <br></br>
           <button onClick={this.buttonClick}>Next</button>
         
       </div>
